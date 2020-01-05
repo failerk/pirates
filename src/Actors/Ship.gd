@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+export (int) var health = 3
 
 var velocity = Vector2()
 
@@ -9,10 +10,10 @@ func get_input():
 	if Input.is_action_just_pressed("fire"): 
 		shoot()
 	if Input.is_action_pressed('move_right'):
-		get_node("ship").set_flip_h(true)
+		$ship.set_flip_h(true)
 		velocity.x += 1
 	if Input.is_action_pressed('move_left'):
-		get_node("ship").set_flip_h(false)
+		$ship.set_flip_h(false)
 		velocity.x -= 1
 	if Input.is_action_pressed('move_down'):
 		velocity.y += 1
@@ -22,8 +23,13 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	check_health()
 	velocity = move_and_slide(velocity)
 	
+func check_health():
+	if health == 0: 
+		queue_free()
+
 func shoot():
 	var cannonball = load("res://src/Objects/Cannonball.tscn").instance()
 	cannonball.position = get_global_position()
@@ -32,4 +38,4 @@ func shoot():
 
 func _on_EnemyShotDetector_area_entered(area):
 	if area.has_method("is_enemy"):
-		queue_free()
+		health -= 1
