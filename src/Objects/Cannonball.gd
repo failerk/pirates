@@ -1,9 +1,4 @@
-extends Area2D
-
-const speed = 10
-var target
-# Declare velocity here for straight line forever bullet
-var velocity = Vector2()
+extends BaseCannonball
 
 func _ready():
 	target = get_global_mouse_position()
