@@ -24,6 +24,10 @@ config/name="pirate"
 run/main_scene="res://src/Levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://src/Autoload/PlayerData.tscn"
+
 [display]
 
 window/size/width=1920

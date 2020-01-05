@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-export (int) var health = 3
 
 var velocity = Vector2()
 
@@ -27,7 +26,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	
 func check_health():
-	if health == 0: 
+	if PlayerData.health == 0: 
 		queue_free()
 
 func shoot():
@@ -38,4 +37,5 @@ func shoot():
 
 func _on_EnemyShotDetector_area_entered(area):
 	if area.has_method("is_enemy"):
-		health -= 1
+		PlayerData.set_health(PlayerData.health - 1)
+		area.queue_free()

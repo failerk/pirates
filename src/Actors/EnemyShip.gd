@@ -17,5 +17,6 @@ func _on_Timer_timeout():
 
 func _on_ShotDetector_area_entered(area):
 	if area.has_method("is_player"):
+		area.queue_free()
 		queue_free()
 	
