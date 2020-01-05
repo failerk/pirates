@@ -14,7 +14,14 @@ __meta__ = {
 }
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
-position = Vector2( 928, 704 )
+position = Vector2( 259.055, 643.599 )
+
+[node name="Camera2D" parent="Ship" index="3"]
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1280
 
 [node name="EnemyShip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1488, 560 )
+position = Vector2( 2040.67, 638.522 )
+
+[editable path="Ship"]
