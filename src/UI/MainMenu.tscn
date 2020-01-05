@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -96.0
-margin_top = -19.5
-margin_right = 96.0
-margin_bottom = 19.5
+margin_left = -130.0
+margin_top = -33.0
+margin_right = 130.0
+margin_bottom = 33.0
 text = "Start Game"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -40,15 +40,14 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
-anchor_top = 0.312
 anchor_right = 0.5
-anchor_bottom = 0.312
-margin_left = -48.7601
-margin_top = -17.4713
-margin_right = 61.2399
-margin_bottom = 17.5287
+margin_left = -956.077
+margin_top = 273.233
+margin_right = 963.923
+margin_bottom = 405.233
 custom_fonts/font = ExtResource( 2 )
 text = "Pirates!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
